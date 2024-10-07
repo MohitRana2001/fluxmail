@@ -64,19 +64,19 @@ export function AccountSwitcher({
           <SelectValue placeholder="Select an account">
             <span className={cn({ "hidden": !isCollapsed })}>
               {
-                accounts.find((account) => account.id === accountId)?.emailAddress[0]
+                accounts.find((account: { id: string; emailAddress: string }) => account.id === accountId)?.emailAddress[0]
               }
             </span>
             <span className={cn("ml-2", isCollapsed && "hidden")}>
               {
-                accounts.find((account) => account.id === accountId)
+                accounts.find((account: { id: string; emailAddress: string }) => account.id === accountId)
                   ?.emailAddress
               }
             </span>
           </SelectValue>
         </SelectTrigger>
         <SelectContent>
-          {accounts.map((account) => (
+          {accounts.map((account: { id: string; emailAddress: string }) => (
             <SelectItem key={account.id} value={account.id}>
               <div className="flex items-center gap-3 [&_svg]:h-4 [&_svg]:w-4 [&_svg]:shrink-0 [&_svg]:text-foreground">
                 {/* {account.icon} */}

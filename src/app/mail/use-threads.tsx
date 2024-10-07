@@ -13,12 +13,12 @@ const useThreads = () => {
         accountId,
         done,
         tab
-    }, { enabled: !!accountId && !!tab, placeholderData: (e) => e, refetchInterval: 1000 * 5 })
+    }, { enabled: !!accountId && !!tab, placeholderData: (e: any) => e, refetchInterval: 1000 * 5 })
 
     return {
         threads,
         isFetching,
-        account: accounts?.find((account) => account.id === accountId),
+        account: accounts?.find((account: { id: string }) => account.id === accountId),
         refetch,
         accounts,
         queryKey,
