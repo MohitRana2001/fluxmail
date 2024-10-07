@@ -16,7 +16,7 @@ import useAccountSwitching from "./use-account-switching";
 import useThemeSwitching from "./use-theme-switching";
 import { useAtom } from "jotai";
 import { isSearchingAtom } from "../search-bar";
-import { useThread } from "../use-thread";
+import { useThread } from "../../use-thread";
 
 
 export default function KBar({ children }: { children: React.ReactNode }) {

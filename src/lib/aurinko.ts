@@ -4,7 +4,7 @@ import type { EmailMessage } from './types';
 import { getServerSession } from 'next-auth';
 // import { getSubscriptionStatus } from './stripe-actions';
 import { db } from '@/server/db';
-// import { FREE_ACCOUNTS_PER_USER, PRO_ACCOUNTS_PER_USER } from '@/app/constants';
+import { FREE_ACCOUNTS_PER_USER, PRO_ACCOUNTS_PER_USER } from '@/app/constants';
 
 export const getAurinkoAuthorizationUrl = async (serviceType: 'Google' | 'Office365') => {
     const session = await getServerSession();
